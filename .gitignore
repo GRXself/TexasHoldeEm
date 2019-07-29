@@ -1,0 +1,15 @@
+# ignore local setting files
+.DS_Store
+.idea/
+TexasHoldEm.GameLogic/.DS_Store
+
+# ignore compiled files
+TexasHoldEm.GameLogic.Tests/bin/
+TexasHoldEm.GameLogic.Tests/obj/
+TexasHoldEm.GameLogic/bin/
+TexasHoldEm.GameLogic/obj/
+TexasHoldEm.Web/bin/
+TexasHoldEm.Web/obj/
+
+# ignore emacs auto saved file (back up)
+*~

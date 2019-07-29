@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TexasHoldEm.Web", "TexasHoldEm.Web\TexasHoldEm.Web.csproj", "{444DAABF-D235-4EF2-89EF-64DAF8CD65DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TexasHoldEm.Web.Tests", "TexasHoldEm.Web.Tests\TexasHoldEm.Web.Tests.csproj", "{381FD519-D22F-4371-B88B-3859443DB201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TexasHoldEm.GameLogic", "TexasHoldEm.GameLogic\TexasHoldEm.GameLogic.csproj", "{7CF99CB8-17E6-43E0-8496-732F75B7B46A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TexasHoldEm.GameLogic.Tests", "TexasHoldEm.GameLogic.Tests\TexasHoldEm.GameLogic.Tests.csproj", "{A5EF6043-6176-49A9-87AF-5F12A9246731}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{444DAABF-D235-4EF2-89EF-64DAF8CD65DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{444DAABF-D235-4EF2-89EF-64DAF8CD65DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{444DAABF-D235-4EF2-89EF-64DAF8CD65DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{444DAABF-D235-4EF2-89EF-64DAF8CD65DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{381FD519-D22F-4371-B88B-3859443DB201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381FD519-D22F-4371-B88B-3859443DB201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381FD519-D22F-4371-B88B-3859443DB201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381FD519-D22F-4371-B88B-3859443DB201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CF99CB8-17E6-43E0-8496-732F75B7B46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CF99CB8-17E6-43E0-8496-732F75B7B46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CF99CB8-17E6-43E0-8496-732F75B7B46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CF99CB8-17E6-43E0-8496-732F75B7B46A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5EF6043-6176-49A9-87AF-5F12A9246731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5EF6043-6176-49A9-87AF-5F12A9246731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5EF6043-6176-49A9-87AF-5F12A9246731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5EF6043-6176-49A9-87AF-5F12A9246731}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
