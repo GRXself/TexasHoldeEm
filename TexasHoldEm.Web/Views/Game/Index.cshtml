@@ -1,0 +1,66 @@
+@model object
+
+@{
+    ViewBag.Title = "GameIndex";
+    Layout = "_Layout";
+}
+
+<script type="text/javascript">
+    function GetGameResult() {
+        $.ajax({
+            url: '@Url.Action("GetGameResult", "Game")',
+            type: 'POST',
+            data: {
+                PlayerOneName : $('#Player_One_Name').val(),
+                PlayerOneCards : $('#Player_One_Cards').val(),
+                PlayerTwoName : $('#Player_Two_Name').val(),
+                PlayerTwoCards : $('#Player_Two_Cards').val()
+            },
+            success: function(texasGameResult) {
+                var commonPartialWinString = " wins - ";
+                var commonTieString = "Tie";
+                
+                if (texasGameResult.winnerName == null)
+                {
+                    $('#GameResultOutput').text(commonTieString);
+                }
+                else
+                {
+                    var commonWinString = texasGameResult.winnerName + commonPartialWinString + texasGameResult.winLevel;
+                    if (texasGameResult.winCard == null) 
+                    {
+                        $('#GameResultOutput').text(commonWinString);
+                    }
+                    else
+                    {
+                        $('#GameResultOutput').text(commonWinString + ": " + texasGameResult.winCard);
+                    }
+                }
+            }
+        })
+    }
+</script>
+
+<h2>Texas HoldEm Game</h2>
+<div>
+    <form>
+        <div>
+            PlayerOne Name: <br/>
+            <input id="Player_One_Name" type="text" name="Player_One_Name"/> <br/>
+            PlayerOne Cards: <br/>
+            <input id="Player_One_Cards" type="text" name="Player_One_Cards"/> <br/>
+        </div>
+        <div>
+            PlayerTwo Name: <br/>
+            <input id="Player_Two_Name" type="text" name="Player_Two_Name"/> <br/>
+            PlayerTwo Cards: <br/>
+            <input id="Player_Two_Cards" type="text" name="Player_Two_Cards"/> <br/>
+        </div>
+        <input type="button" value="Get Game Result" onclick="GetGameResult()"/>
+    </form>
+</div>
+
+<div>
+    Game Result is:
+    <p id="GameResultOutput">Here is the Game Result.</p>
+</div>
