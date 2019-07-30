@@ -19,10 +19,22 @@ namespace TexasHoldEm.GameLogic.Models
             Cards = Cards.OrderBy(c => c.Value).ToList();
         }
 
+        public HandCards(List<PokerCard> cards)
+        {
+            Cards = cards;
+        }
+
         public TexasHoldEmHandCardLevel GetHandCardsLevel()
         {
             return TexasHoldEmHandCardLevel.GetAllLevelInstances()
                 .FirstOrDefault(currentLevel => currentLevel.IsThisLevel(Cards));
+        }
+
+        public override string ToString()
+        {
+            var s = "";
+            Cards.ForEach(c => s += c.ToString() + " ");
+            return s.Trim();
         }
     }
 }

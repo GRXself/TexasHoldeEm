@@ -1,7 +1,7 @@
 @model object
 
 @{
-    ViewBag.Title = "GameIndex";
+    ViewBag.Title = "Texas HoldEm :Fate";
     Layout = "_Layout";
 }
 
@@ -39,6 +39,18 @@
             }
         })
     }
+    
+    function GetOneSetRandomHandCards(playerHandCardsInputID) {
+        $.ajax({
+            url: '@Url.Action("GetRandomTexasHandCards", "Game")',
+            type: 'POST',
+            success: function(handCards) {
+                playerHandCardsInputID = '#' + playerHandCardsInputID;
+                $(playerHandCardsInputID).val(handCards);
+                // $('#Player_One_Cards').val(handCards);
+            }
+        })
+    }    
 </script>
 
 <h2>Texas HoldEm Game</h2>
@@ -48,13 +60,15 @@
             PlayerOne Name: <br/>
             <input id="Player_One_Name" type="text" name="Player_One_Name"/> <br/>
             PlayerOne Cards: <br/>
-            <input id="Player_One_Cards" type="text" name="Player_One_Cards"/> <br/>
+            <input id="Player_One_Cards" type="text" name="Player_One_Cards"/> 
+            <input type="button" value="Get Player One Cards" onclick="GetOneSetRandomHandCards('Player_One_Cards')"/> <br/>
         </div>
         <div>
             PlayerTwo Name: <br/>
             <input id="Player_Two_Name" type="text" name="Player_Two_Name"/> <br/>
             PlayerTwo Cards: <br/>
-            <input id="Player_Two_Cards" type="text" name="Player_Two_Cards"/> <br/>
+            <input id="Player_Two_Cards" type="text" name="Player_Two_Cards"/> 
+            <input type="button" value="Get Player Two Cards" onclick="GetOneSetRandomHandCards('Player_Two_Cards')"/> <br/>
         </div>
         <input type="button" value="Get Game Result" onclick="GetGameResult()"/>
     </form>

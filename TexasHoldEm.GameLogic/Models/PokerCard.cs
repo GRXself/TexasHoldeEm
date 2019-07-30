@@ -4,7 +4,7 @@ using TexasHoldEm.GameLogic.Core;
 
 namespace TexasHoldEm.GameLogic.Models
 {
-    public class PokerCard : IComparable<PokerCard>
+    public class PokerCard : IComparable<PokerCard>, IEquatable<PokerCard>
     {
         public int Value { get; }
         public PokerCardColor Color { get; }
@@ -78,6 +78,58 @@ namespace TexasHoldEm.GameLogic.Models
                     return "K";
                 case 14:
                     return "Ace";
+                default:
+                    throw new InvalidDataException();
+            }
+        }
+        
+        public override string ToString()
+        {
+            return ToCardValueStringInBrief() + Color;
+        }
+
+        public bool Equals(PokerCard other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+            return Value == other.Value && Color == other.Color;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((PokerCard) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return (Value * 397) ^ (int) Color;
+            }
+        }
+
+        private string ToCardValueStringInBrief()
+        {
+            if (Value < 10)
+            {
+                return Value.ToString();
+            }
+
+            switch (Value)
+            {
+                case 10:
+                    return "T";
+                case 11:
+                    return "J";
+                case 12:
+                    return "Q";
+                case 13:
+                    return "K";
+                case 14:
+                    return "A";
                 default:
                     throw new InvalidDataException();
             }
