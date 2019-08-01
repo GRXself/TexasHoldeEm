@@ -11,7 +11,8 @@ namespace TexasHoldEm.GameLogic.Tests.Models
 
         public PokerCardDeckTests()
         {
-            _pokerCardDeck = new PokerCardDeck();
+            PokerCardDeck.RefreshInstance();
+            _pokerCardDeck = PokerCardDeck.GetInstance();
         }
 
         [Fact]

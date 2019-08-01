@@ -8,8 +8,6 @@ namespace TexasHoldEm.Web.Controllers
 {
     public class GameController : Controller
     {
-        private PokerCardDeck _pokerCardDeck = new PokerCardDeck();
-        
         public IActionResult Index()
         {
             return View();
@@ -28,12 +26,12 @@ namespace TexasHoldEm.Web.Controllers
 
         public ActionResult<string> GetRandomTexasHandCards()
         {
-            return new PokerCardDistributor(_pokerCardDeck).GetOneSetHandCards().ToString();
+            return new PokerCardDistributor(PokerCardDeck.GetInstance()).GetOneSetHandCards().ToString();
         }
 
         public ActionResult<string> RefreshPokerCardDeck()
         {
-            _pokerCardDeck = new PokerCardDeck();
+            PokerCardDeck.RefreshInstance();
             return "Deck changed";
         }
     }

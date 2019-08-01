@@ -48,9 +48,22 @@
                 playerHandCardsInputID = '#' + playerHandCardsInputID;
                 $(playerHandCardsInputID).val(handCards);
                 // $('#Player_One_Cards').val(handCards);
+            },
+            error: function() {
+                alert("Card Deck is empty, please refresh it!!!");
             }
         })
-    }    
+    }
+    
+    function RefreshDeck() {
+        $.ajax({
+            url: '@Url.Action("RefreshPokerCardDeck", "Game")',
+            type: 'POST',
+            success: function(data) {
+                alert(data);
+            }
+        })
+    }
 </script>
 
 <h2>Texas HoldEm Game</h2>
@@ -77,4 +90,8 @@
 <div>
     Game Result is:
     <p id="GameResultOutput">Here is the Game Result.</p>
+</div>
+
+<div>
+    <a type="button" onclick="RefreshDeck()">Refresh deck!</a>
 </div>

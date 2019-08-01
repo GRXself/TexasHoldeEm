@@ -7,14 +7,26 @@ namespace TexasHoldEm.GameLogic.Models
 {
     public class PokerCardDeck
     {
+        private static PokerCardDeck _instance = new PokerCardDeck();
+        
         public int CurrentCardsCount { get; set; }
 
         public List<PokerCard> PokerCards { get; }
 
-        public PokerCardDeck()
+        private PokerCardDeck()
         {
             CurrentCardsCount = 52;
             PokerCards = GetInitialDeck();
+        }
+
+        public static PokerCardDeck GetInstance()
+        {
+            return _instance;
+        }
+
+        public static void RefreshInstance()
+        {
+            _instance = new PokerCardDeck();
         }
 
         public PokerCard GetSingleCard()
