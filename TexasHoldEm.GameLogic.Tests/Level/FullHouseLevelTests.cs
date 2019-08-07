@@ -12,7 +12,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region IsThisLevel method tests
 
         [Fact]
-        public void IsThisLevel_FullHouseLevelHandCards_ReturnsTrue()
+        public void GivenFullHouseLevelHandCards_ReturnsTrue()
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString("2S 2H 3S 3H 3D");
@@ -27,7 +27,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         [Theory]
         [InlineData("2S 2H 3S 3H 4D")]
         [InlineData("2S 2H 2D 3S 4D")]
-        public void IsThisLevel_NotFullHouseLevelHandCards_ReturnFalse(string cardsString)
+        public void GivenNotFullHouseLevelHandCards_ReturnFalse(string cardsString)
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString(cardsString);
@@ -44,7 +44,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region GetSameLevelCompareResult method tests
 
         [Fact]
-        public void GetSameLevelCompareResult_BlackPlayerThreeOfAKindCardLargerThanWhitePlayer_ReturnBlackWinResult()
+        public void GivenBlackPlayerThreeOfAKindCardLargerThanWhitePlayer_ReturnBlackWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2D 2C 4D 4H 4S");
@@ -63,7 +63,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
 
         [Fact]
-        public void GetSameLevelCompareResult_WhitePlayerHighCardLargerThanBlackPlayer_ReturnWhiteWinResult()
+        public void GivenWhitePlayerHighCardLargerThanBlackPlayer_ReturnWhiteWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2S 2H 3S 3H 3D");

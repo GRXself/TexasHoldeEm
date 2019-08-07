@@ -12,7 +12,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region IsThisLevel method tests
 
         [Fact]
-        public void IsThisLevel_FlushLevelHandCards_ReturnsTrue()
+        public void GivenFlushLevelHandCards_ReturnsTrue()
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString("2S 8S AS QS 3S");
@@ -27,7 +27,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         [Theory]
         [InlineData("2S 3S 4S 5S 6S")]
         [InlineData("2S 3S 4S 5S 7H")]
-        public void IsThisLevel_NotPureFlushLevelHandCards_ReturnFalse(string cardsString)
+        public void GivenNotPureFlushLevelHandCards_ReturnFalse(string cardsString)
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString(cardsString);
@@ -44,7 +44,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region GetSameLevelCompareResult method tests
 
         [Fact]
-        public void GetSameLevelCompareResult_BlackPlayerHighCardLargerThanWhitePlayer_ReturnBlackWinResult()
+        public void GivenBlackPlayerHighCardLargerThanWhitePlayer_ReturnBlackWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2S 4S 5S 6S 8S");
@@ -63,7 +63,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
 
         [Fact]
-        public void GetSameLevelCompareResult_WhitePlayerHighCardLargerThanBlackPlayer_ReturnWhiteWinResult()
+        public void GivenWhitePlayerHighCardLargerThanBlackPlayer_ReturnWhiteWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2H 4H 5H 6H 7H");
@@ -82,7 +82,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
 
         [Fact]
-        public void GetSameLevelCompareResult_BlackPlayerAndWhitePlayerHaveSameHighCard_ReturnTie()
+        public void GivenBlackPlayerAndWhitePlayerHaveSameHighCard_ReturnTie()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2H 4H 5H 6H 7H");

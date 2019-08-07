@@ -12,7 +12,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region IsThisLevel method tests
 
         [Fact]
-        public void IsThisLevel_StraightFlushLevelHandCards_ReturnsTrue()
+        public void GivenStraightFlushLevelHandCards_ReturnsTrue()
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString("2S 3S 4S 5S 6S");
@@ -28,7 +28,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         [InlineData("2S 3S 4S 5S 7S")]
         [InlineData("2S 3S 4S 5S 6H")]
         [InlineData("2S 3S 4S 5S 7H")]
-        public void IsThisLevel_NotStraightFlushLevelHandCards_ReturnFalse(string cardsString)
+        public void GivenNotStraightFlushLevelHandCards_ReturnFalse(string cardsString)
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString(cardsString);
@@ -45,7 +45,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region GetSameLevelCompareResult method tests
 
         [Fact]
-        public void GetSameLevelCompareResult_BlackPlayerHighCardLargerThanWhitePlayer_ReturnBlackWinResult()
+        public void GivenBlackPlayerHighCardLargerThanWhitePlayer_ReturnBlackWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("3H 4H 5H 6H 7H");
@@ -64,7 +64,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
 
         [Fact]
-        public void GetSameLevelCompareResult_WhitePlayerHighCardLargerThanBlackPlayer_ReturnWhiteWinResult()
+        public void GivenWhitePlayerHighCardLargerThanBlackPlayer_ReturnWhiteWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2S 3S 4S 5S 6S");
@@ -83,7 +83,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
 
         [Fact]
-        public void GetSameLevelCompareResult_BlackPlayerAndWhitePlayerHaveSameHighCard_ReturnTie()
+        public void GivenBlackPlayerAndWhitePlayerHaveSameHighCard_ReturnTie()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2S 3S 4S 5S 6S");

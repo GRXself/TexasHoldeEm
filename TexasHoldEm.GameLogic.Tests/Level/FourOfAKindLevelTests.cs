@@ -12,7 +12,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region IsThisLevel method tests
 
         [Fact]
-        public void IsThisLevel_FourOfAKindLevelHandCards_ReturnTrue()
+        public void GivenFourOfAKindLevelHandCards_ReturnTrue()
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString("2D 2S 2H 2C 3D");
@@ -27,7 +27,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         [Theory]
         [InlineData("2D 2S 2H 3C 3D")]
         [InlineData("2D 2S 3H 3C 4D")]
-        public void IsThisLevel_NotFourOfAKindHandCards_ReturnFalse(string cardsString)
+        public void GivenNotFourOfAKindHandCards_ReturnFalse(string cardsString)
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString(cardsString);
@@ -44,7 +44,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region GetSameLevelCompareResult method tests
 
         [Fact]
-        public void GetSameLevelCompareResult_BlackPlayerFourOfAKindCardLargerThanWhitePlayer_ReturnBlackWinResult()
+        public void GivenBlackPlayerFourOfAKindCardLargerThanWhitePlayer_ReturnBlackWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2S 4D 4S 4H 4C");
@@ -63,7 +63,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
 
         [Fact]
-        public void GetSameLevelCompareResult_WhitePlayerFourOfAKindCardLargerThanBlackPlayer_ReturnWhiteWinResult()
+        public void GivenWhitePlayerFourOfAKindCardLargerThanBlackPlayer_ReturnWhiteWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2H 3D 3S 3H 3C");

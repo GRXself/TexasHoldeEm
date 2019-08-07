@@ -12,7 +12,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region IsThisLevel method tests
 
         [Fact]
-        public void IsThisLevel_OnePairLevelHandCards_ReturnsTrue()
+        public void GivenOnePairLevelHandCards_ReturnsTrue()
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString("2S 2D 3D 4H 5C");
@@ -27,7 +27,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         [Theory]
         [InlineData("2D 2H 2S 3D 3H")]
         [InlineData("2D 2H 3D 3H 4D")]
-        public void IsThisLevel_NotPureOnePairLevelHandCards_ReturnFalse(string cardsString)
+        public void GivenNotPureOnePairLevelHandCards_ReturnFalse(string cardsString)
         {
             // Arrange
             var handCards = CreateHandCardsByCardsString(cardsString);
@@ -44,7 +44,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         #region GetSameLevelCompareResult method tests
         
         [Fact]
-        public void GetSameLevelCompareResult_BlackPlayerHighCardLargerThanWhitePlayer_ReturnBlackWinResult()
+        public void GivenBlackPlayerHighCardLargerThanWhitePlayer_ReturnBlackWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2D 2H 3D 4D 6D");
@@ -63,7 +63,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
 
         [Fact]
-        public void GetSameLevelCompareResult_WhitePlayerHighCardLargerThanBlackPlayer_ReturnWhiteWinResult()
+        public void GivenWhitePlayerHighCardLargerThanBlackPlayer_ReturnWhiteWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2S 2C 3H 4H 5H");
@@ -82,7 +82,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
         
         [Fact]
-        public void GetSameLevelCompareResult_BlackPlayerPairCardLargerThanWhitePlayer_ReturnBlackWinResult()
+        public void GivenBlackPlayerPairCardLargerThanWhitePlayer_ReturnBlackWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2D 3D 4D 5D 5H");
@@ -101,7 +101,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
 
         [Fact]
-        public void GetSameLevelCompareResult_WhitePlayerPairCardLargerThanBlackPlayer_ReturnWhiteWinResult()
+        public void GivenWhitePlayerPairCardLargerThanBlackPlayer_ReturnWhiteWinResult()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2S 3S 4S 4H 5S");
@@ -120,7 +120,7 @@ namespace TexasHoldEm.GameLogic.Tests.Level
         }
 
         [Fact]
-        public void GetSameLevelCompareResult_BlackPlayerAndWhitePlayerHaveSameHighCard_ReturnTie()
+        public void GivenBlackPlayerAndWhitePlayerHaveSameHighCard_ReturnTie()
         {
             // Arrange
             var blackPlayer = CreateBlackPlayer("2D 2H 3D 4D 5D");
